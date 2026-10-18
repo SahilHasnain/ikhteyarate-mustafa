@@ -1,18 +1,27 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
+import '@/global.css';
+
+import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
+import { SQLiteProvider } from 'expo-sqlite';
+import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'react-native';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+import { Colors } from '@/constants/theme';
 
-SplashScreen.preventAutoHideAsync();
+export default function RootLayout() {
+  const scheme = useColorScheme();
+  const palette = Colors[scheme === 'dark' ? 'dark' : 'light'];
+  const routerTheme = scheme === 'dark' ? DarkTheme : DefaultTheme;
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <SQLiteProvider databaseName="ikhteyarate-mustafa-v2.db" assetSource={{ assetId: require('@/assets/db/ikhteyarate-mustafa-mobile.db') }}>
+      <ThemeProvider value={{ ...routerTheme, colors: { ...routerTheme.colors, background: palette.background, card: palette.surface, text: palette.text, border: palette.border, primary: palette.primary } }}>
+        <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
+        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: palette.background } }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="contents/[edition]" options={{ headerShown: true, title: 'Contents', headerBackTitle: 'Back' }} />
+          <Stack.Screen name="reader/[edition]/[sectionId]" options={{ headerShown: false }} />
+        </Stack>
+      </ThemeProvider>
+    </SQLiteProvider>
   );
 }
