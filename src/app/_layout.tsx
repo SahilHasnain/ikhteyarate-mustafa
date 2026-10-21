@@ -13,7 +13,7 @@ export default function RootLayout() {
   const routerTheme = scheme === 'dark' ? DarkTheme : DefaultTheme;
 
   return (
-    <SQLiteProvider databaseName="ikhteyarate-mustafa-v2.db" assetSource={{ assetId: require('@/assets/db/ikhteyarate-mustafa-mobile.db') }}>
+    <SQLiteProvider databaseName="ikhteyarate-mustafa-v3.db" assetSource={{ assetId: require('@/assets/db/ikhteyarate-mustafa-mobile.db') }}>
       <ThemeProvider value={{ ...routerTheme, colors: { ...routerTheme.colors, background: palette.background, card: palette.surface, text: palette.text, border: palette.border, primary: palette.primary } }}>
         <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
         <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: palette.background } }}>
