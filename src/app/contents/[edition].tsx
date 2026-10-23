@@ -29,7 +29,7 @@ export default function ContentsScreen() {
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]} edges={['bottom']}>
       <ScrollView contentContainerStyle={styles.content}>
-        <ThemedText type="small" themeColor="textSecondary">IKHTEYARATE MUSTAFA</ThemedText>
+        <ThemedText type="small" themeColor="textSecondary">THE POWER OF AL-MUSTAFA</ThemedText>
         <ThemedText style={styles.title}>{bookEdition?.language ?? 'Contents'}</ThemedText>
         <ThemedText themeColor="textSecondary">{sections.length} sections</ThemedText>
         {sections.map((section) => {

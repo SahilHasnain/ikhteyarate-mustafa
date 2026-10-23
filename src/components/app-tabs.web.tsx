@@ -7,7 +7,7 @@ import { MaxContentWidth, Radii, Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 
 export default function AppTabs() {
-  return <Tabs><TabSlot style={styles.slot} /><TabList style={styles.tabList}><TabTrigger name="library" href="/(tabs)/index" asChild><TabButton>Library</TabButton></TabTrigger><TabTrigger name="browse" href="/(tabs)/explore" asChild><TabButton>Browse</TabButton></TabTrigger></TabList></Tabs>;
+  return <Tabs><TabSlot style={styles.slot} /><TabList style={styles.tabList}><TabTrigger name="library" href="/(tabs)" asChild><TabButton>Library</TabButton></TabTrigger><TabTrigger name="browse" href="/(tabs)/explore" asChild><TabButton>Browse</TabButton></TabTrigger></TabList></Tabs>;
 }
 
 function TabButton({ children, isFocused, ...props }: TabTriggerSlotProps) {

@@ -42,7 +42,7 @@ export default function BrowseScreen() {
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]} edges={['top']}>
       <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={styles.content}>
-        <ThemedText type="small" themeColor="textSecondary">IKHTEYARATE MUSTAFA</ThemedText>
+        <ThemedText type="small" themeColor="textSecondary">THE POWER OF AL-MUSTAFA</ThemedText>
         <ThemedText style={styles.title}>Browse sections</ThemedText>
         <ThemedText themeColor="textSecondary">Choose an edition and find a passage.</ThemedText>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.editionPicker}>

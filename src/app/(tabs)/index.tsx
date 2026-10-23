@@ -64,7 +64,7 @@ export default function LibraryScreen() {
 
         <View style={[styles.featureCard, { backgroundColor: palette.surfaceRaised, borderColor: palette.border }]}>
           <ThemedText style={[styles.eyebrow, { color: palette.primary }]}>A BOOK TO EXPLORE</ThemedText>
-          <ThemedText style={styles.bookTitle}>{book?.title ?? 'Ikhteyarate Mustafa'}</ThemedText>
+          <ThemedText style={styles.bookTitle}>The Power of Al-Mustafa</ThemedText>
           <ThemedText themeColor="textSecondary">{book?.author ?? 'Imran Raza Attari'}</ThemedText>
           <View style={styles.bookMeta}><ThemedText type="small" themeColor="textSecondary">Three language editions</ThemedText><ThemedText type="small" themeColor="textSecondary">·</ThemedText><ThemedText type="small" themeColor="textSecondary">17 sections each</ThemedText></View>
           <Pressable accessibilityRole="button" disabled={editions.length === 0} onPress={() => void continueReading()} style={({ pressed }) => [styles.continueButton, { backgroundColor: palette.primary }, pressed && styles.pressed, editions.length === 0 && styles.disabled]}>
